@@ -16,11 +16,20 @@ public class ServletSession1 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		/**
+		 * getSession()方法的工作:
+		 * <li>1、查看客户端是否携带了JSESSIONIDCookie
+		 * <li>2、如果没有携带，创建一个新的session对象，并分配一个唯一的ID发送到
+		 * <li>客户端，存储到客户端的缓存中，如果携带了，那么将根据这个Cookie的值(id)
+		 * <li>那么就会去服务端的内存中寻找这个session，如果找到了则返回这个session为
+		 * <li>客户端服务，如果找不到，就创建新的session对象，并分配一个唯一的ID发送到
+		 * <li>客户端，存储到客户端的缓存中
+		 */
 		HttpSession session = request.getSession();
 		String id = session.getId();
 
 		System.out.println("id" + id);
-		session.setAttribute("name", "章武巨大发");
+		session.setAttribute("name", "张无忌爱赵敏？");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
