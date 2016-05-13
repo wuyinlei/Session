@@ -87,7 +87,7 @@ public class ServletCore extends HttpServlet {
 		 * // 10以内的数字 // 画到图像上 graphics.drawString(n + "", 20 + 40 * i, 20); }
 		 */
 		
-		System.out.println(sb.toString());
+		//System.out.println(sb.toString());
 		// 将验证码存入sesstion
 		request.getSession().setAttribute("scode", sb.toString());
 
